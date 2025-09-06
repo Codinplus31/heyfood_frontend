@@ -525,8 +525,7 @@ sx={{borderRadius: "12rem", overflow:"hidden", width: searchenter === true ? "60
             control={<Radio sx={{background: "#efefef"}}/>}
             label="Most Popular"
           />
-          <FormControlLabel value="Nearest" control={<Radio />} label="Nearest" />
-          <FormControlLabel
+           <FormControlLabel
             value="Highest rated"
             control={<Radio sx={{background: "#efefef"}}/>}
             label="Highest rated"
