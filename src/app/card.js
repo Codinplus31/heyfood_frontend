@@ -75,8 +75,8 @@ function getRestaurantStatus(open_time, close_time) {
       .padStart(2, "0")} ${closeHour >= 12 ? "PM" : "AM"}`;
     bgColor = "#00A205";
   } else {
-    label = "Open Now";
-    bgColor = "#00A205";
+    label = "";
+    bgColor = "transparent";
   }
 
   return { label, bgColor };
