@@ -100,7 +100,7 @@ export default function Sort({ searchQuery, setSearchQuery, filteredVendors, set
       </Box>
 
       {/* Search Results Header */}
-      <Box sx={{ paddingLeft: { xs: "0rem", sm: "3em" } }}>
+      <Box sx={{ paddingLeft: { xs: "1em", sm: "3em" } }}>
         <Typography
           variant="h5"
           sx={{
