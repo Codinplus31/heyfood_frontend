@@ -11,6 +11,44 @@ import {
 export default function Cards({data, setsort, isnull, issort, type}) {
   let dumb = [0, 0, 0, 0, 0, 0];
 
+function getRestaurantStatus(open_time, close_time) {
+  const now = new Date();
+
+  const [openHour, openMinute] = open_time.split(":").map(Number);
+  const [closeHour, closeMinute] = close_time.split(":").map(Number);
+
+  const openTime = new Date();
+  openTime.setHours(openHour, openMinute, 0, 0);
+
+  const closeTime = new Date();
+  closeTime.setHours(closeHour, closeMinute, 0, 0);
+
+  let label = "";
+  let bgColor = "";
+
+  if (now < openTime) {
+    label = `Opens at ${openHour % 12 || 12}:${openMinute
+      .toString()
+      .padStart(2, "0")} ${openHour >= 12 ? "PM" : "AM"}`;
+    bgColor = "#FFA900";
+  } else if (now >= closeTime) {
+    label = "Currently Closed";
+    bgColor = "#FF6A5E";
+  } else if (closeTime - now <= 3 * 60 * 60 * 1000) {
+    label = `Closes at ${closeHour % 12 || 12}:${closeMinute
+      .toString()
+      .padStart(2, "0")} ${closeHour >= 12 ? "PM" : "AM"}`;
+    bgColor = "#00A205";
+  } else {
+    label = "";
+    bgColor = "transparent";
+  }
+
+  return { label, bgColor };
+}
+
+
+  
   return (
     <Container sx={{ width: {sm:"95%", xs:"100%"}, display: "flex", alignItems: "center", flexDirection: "column"}}>
       <Stack
@@ -95,6 +133,8 @@ export default function Cards({data, setsort, isnull, issort, type}) {
                           >
                             {e.discount}
                           </Typography>}
+                
+                            
                 <Typography
                   component="span"
                   variant="body1"
