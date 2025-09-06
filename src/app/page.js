@@ -37,22 +37,22 @@ const [searchQuery, setSearchQuery] = useState("")
     rubberband: true,
     dragStart() {}, // optional
       created(s) {
-            const updateDot = () => {
-                  if (!s) return;
-                        const progress = s.track.details.progress; // 0 → 1
-                              const totalSlides = s.track.details.slides.length;
+      const updateDot = () => {
+        if (!s) return;
+        const progress = s.track.details.progress; // 0 → 1
+         const totalSlides = s.track.details.slides.length;
 
-                                    // fractional index, scaled to total slides
-                                          const fractionalIndex = progress * totalSlides;
+         // fractional index, scaled to total slides
+         const fractionalIndex = progress * totalSlides;
 
-                                                // clamp between 0 and totalSlides - 1
-                                                      const idx = Math.min(Math.floor(fractionalIndex), totalSlides - 1);
+        // clamp between 0 and totalSlides - 1
+        const idx = Math.min(Math.floor(fractionalIndex), totalSlides - 1);
 
-                                                            setCurrentSlide(idx);
-                                                                  requestAnimationFrame(updateDot); // continuous update
-                                                                      };
-                                                                          requestAnimationFrame(updateDot);
-                                                                            },
+        setCurrentSlide(idx);
+        requestAnimationFrame(updateDot); // continuous update
+       };
+       requestAnimationFrame(updateDot);
+   },
       
   });
 let dummy = [0,0,0,0,0,0,0]
@@ -352,7 +352,7 @@ const nativeVendors = filterVendorsByTag(data, "Native corner");
                 }}
               >
                 <img
-                  src={e}
+                  src={"https://heyfood-backend.vercel.app"+e}
                   alt={`banner-${i}`}
                   style={{ width: '100%', height: '100%', borderRadius: '0.6em' }}
                 />
