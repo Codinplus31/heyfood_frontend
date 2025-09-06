@@ -244,7 +244,7 @@ const nativeVendors = filterVendorsByTag(data, "Native corner");
               }}
             >
               <img
-                src={e}
+                src={"https://heyfood-backend.vercel.app"+e}
                 alt={`banner-${i}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '0.6em' }}
               />
