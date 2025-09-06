@@ -135,21 +135,29 @@ function getRestaurantStatus(open_time, close_time) {
                           </Typography>}
                 
                             
-                <Typography
-                  component="span"
-                  variant="body1"
-                  sx={{
-                    background: "#FFA900",
-                    paddingInline: "10px",
-                    paddingBlock: "6px",
-                    borderRadius: "0.3em",
-                    position: "absolute",
-                    bottom: "50px",
-                    fontSize: "92%",
-                  }}
-                >
-                  Opens at {e.open_time} AM
-                </Typography>
+                
+                  {(() => {
+    const { label, bgColor } = getRestaurantStatus(e.open_time, e.close_time);
+    return (
+      <Typography
+        key={e.id}
+        component="span"
+        variant="body1"
+        sx={{
+          background: bgColor,
+          paddingInline: "10px",
+          paddingBlock: "6px",
+          borderRadius: "0.3em",
+          position: "absolute",
+          bottom: "50px",
+          fontSize: "92%",
+        }}
+      >
+        {label}
+      </Typography>
+    );
+  })()}
+
               </CardContent>
             </Card>
 
