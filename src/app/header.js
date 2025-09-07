@@ -222,7 +222,7 @@ Heyfood mobile app</span>
 
 const SearchContent = ()=> (
     <Box
-      sx={{ width: "100%", display:searchenter == true ? "block":"none",height: "100%", overflowY:"scroll", position: "absolute", top:{sm:"4%",xs:"18%"}, zIndex: 999, left: "0px", background: "white"}}
+      sx={{ width: "100%", display:searchenter == true ? "block":"none",height: "100%", overflowY:"scroll", position: "absolute", top:{sm:"18%",xs:"18%"}, zIndex: 999, left: "0px", background: "white"}}
       role="presentation"
       
     >
